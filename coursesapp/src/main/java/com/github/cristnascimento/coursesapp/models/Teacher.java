@@ -1,5 +1,6 @@
 package com.github.cristnascimento.coursesapp.models;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -17,8 +18,12 @@ public class Teacher {
 	private String name;
 	
 	@ManyToMany(mappedBy="teachers")
-	Set<Course> courses;
+	Set<Course> courses = new HashSet<>();
 	
+	public Teacher() {
+		super();
+	}
+
 	public Teacher(String name) {
 		super();
 		this.name = name;

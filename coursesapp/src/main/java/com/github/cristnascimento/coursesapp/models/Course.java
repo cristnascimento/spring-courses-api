@@ -1,6 +1,7 @@
 package com.github.cristnascimento.coursesapp.models;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -24,10 +25,13 @@ public class Course {
 	
 	@ManyToMany
 	@JoinTable(name = "teacher_course", joinColumns = @JoinColumn(name="course_id"), inverseJoinColumns = @JoinColumn(name="teacher_id")) 
-	private Set<Teacher> teachers;
+	private Set<Teacher> teachers = new HashSet();
 	
+	public Course() {
+
+	}
+
 	public Course(String name, String description, Date date, double cost) {
-		super();
 		this.name = name;
 		this.description = description;
 		this.date = date;
