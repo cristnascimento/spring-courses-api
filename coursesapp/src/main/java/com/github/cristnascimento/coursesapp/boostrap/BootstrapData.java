@@ -25,7 +25,7 @@ public class BootstrapData implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		Teacher teacher = new Teacher("Bob");
+		Teacher teacher = new Teacher("Bob Lee");
 		Course course = new Course("Learn Java", "Learn Java in 2 weeks", createDate(2020, 12, 8, 17, 0) , 50);
 		teacher.getCourses().add(course);
 		course.getTeachers().add(teacher);
